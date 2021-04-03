@@ -1,10 +1,12 @@
 ## UMKC CS461 - Simulated Annealing Project
 This project is a learning project for COMP-SCI 461: Introduction to Artificial Intelligdence at the University of Missouri-Kansas City.
 
+
 ### Project Description
 This program will generate an optimized class schedule using simulated annealing.
 Provided only simple conditions and their respective weights measured in integer values, we were expected to research the technique ourselves and
 implement it with whatever environment/language we were most comfortable with.
+
 
 ### Process Explained
 Simulated Annealing is a machine learning technique based on the cooling of metal in blacksmithing.
@@ -26,6 +28,7 @@ The temperature will decrease by the specified rate if one of the following are 
 - 400 successful attempts are made
 
 The program will terminate if 4000 attempts are made unsuccessfully OR the maximum temperature drops below the minimum temperature.
+
 
 ### Technologies & Languages Used
 Visual Studio 2017, C++
