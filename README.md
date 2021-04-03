@@ -18,11 +18,14 @@ Starting with the randomized state, it calculates a fitness score based on vario
 
 It will then make a single, random change to this state. If the fitness score of the new state is higher OR is less than or equal to the acceptance
 probability, it will take the new state and repeat the process from there. If it does not satisy either of these conditions, it will instead
-keep the old state.
+keep the old state. The acceptance probabilty can be calculated by: "exp(-(oldScore - newScore) / T)" This means that the chances of exploring a state with 
+a smaller score decreases as the temperature decreases.
 
-Each successful change (one that results in a new state) will cause the maximum temperature to be lowered. The program will terminate once the maximum temperature
-drops below the minimum temperature OR 4000 attempts are made unsuccessfully in a row. Increasing the rate of cooling or lowering the maximum failed attempts will
-result in quicker generation, however the schedule will not be as thoroughly optimized.
+The temperature will decrease by the specified rate if one of the following are satisfied:
+- 4000 attempts are made
+- 400 successful attempts are made
+
+The program will terminate if 4000 attempts are made unsuccessfully OR the maximum temperature drops below the minimum temperature.
 
 ### Technologies & Languages Used
 Visual Studio 2017, C++
