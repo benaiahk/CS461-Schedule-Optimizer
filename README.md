@@ -23,10 +23,7 @@ probability, it will take the new state and repeat the process from there. If it
 keep the old state. The acceptance probabilty can be calculated by: "exp(-(oldScore - newScore) / T)" This means that the chances of exploring a state with 
 a smaller score decreases as the temperature decreases.
 
-The temperature will decrease by the specified rate if one of the following are satisfied:
-- 4000 attempts are made
-- 400 successful attempts are made
-
+The temperature will decrease by the specified rate if 4000 attempts are made OR 400 successful attempts, those that result in taking a new state, are made.
 The program will terminate if 4000 attempts are made unsuccessfully OR the maximum temperature drops below the minimum temperature.
 
 
