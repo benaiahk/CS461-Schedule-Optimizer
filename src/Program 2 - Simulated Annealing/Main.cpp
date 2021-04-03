@@ -58,15 +58,11 @@ void simulatedAnnealing(double T, double min, double r) {
 				successfulChanges = 0;
 				maxT *= rate;
 			}
-
-			if (i == 3999 && changesMade) {
-				cout << "4000 iterations made, lowering the temp... (" << (maxT * rate) << ")" << endl;
-				break;
-			}
 		}
 
 		if (!changesMade) break;
-
+		
+		cout << "4000 iterations made, lowering the temp... (" << (maxT * rate) << ")" << endl;
 		maxT *= rate;
 	}
 }
