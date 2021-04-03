@@ -14,7 +14,7 @@ Simulated Annealing is a machine learning technique based on the cooling of meta
 The program begins with a completely randomized state, a maximum temperature (double), a minimum temperature (double), and a rate at which the temperature
 will decrease (double). Each "state" of the schedule is composed of 12 different courses, each course containing an instructor, a room, a time, and the course's name. 
 Starting with the randomized state, it calculates a fitness score based on various conditions such as:
-- "+5 For each course thatdoes not have the same instructor teachign another course at the same time"
+- "+5 For each course that does not have the same instructor teachign another course at the same time"
 - "-5 If the state has an instructor teaching more than four courses (per course over 4)"
 - "+5 If CS101A and CS101B are scheduled 3 hours apart or more"
 
