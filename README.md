@@ -1,5 +1,5 @@
 ## UMKC CS461 - Simulated Annealing Project
-This project is a learning for COMP-SCI 461: Introduction to Artificial Intelligdence at the University of Missouri-Kansas City.
+This project is a learning project for COMP-SCI 461: Introduction to Artificial Intelligdence at the University of Missouri-Kansas City.
 
 ### Project Description
 This program will generate an optimized class schedule using simulated annealing.
