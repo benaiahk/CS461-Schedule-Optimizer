@@ -8,7 +8,7 @@ using namespace std;
 
 // e ^ -[ (change in score) / T ]
 double accProb(int oldScore, int newScore, double T) { 
-	double exponent = -((oldScore - newScore) / T);
+	double exponent = (-(oldScore - newScore) / T);
 	return exp(exponent);
 }
 
@@ -30,14 +30,7 @@ void simulatedAnnealing(double T, double min, double r) {
 
 	while (maxT > minT) {
 		bool changesMade = false;
-		for (int i = 0; i < 4001; i++) {
-			if (i == 4000) {
-				cout << "4000 iterations made, lowering the temp... (" << (maxT * rate) << ")" << endl;
-				break;
-			}
-
-			attempts++;
-
+		for (int i = 0; i < 4000; i++) {
 			State nextState(initState.courseVec);
 			nextState.makeRandomChange();
 
@@ -57,7 +50,7 @@ void simulatedAnnealing(double T, double min, double r) {
 
 				// Increment successful changes and reset pass counter.
 				successfulChanges++;
-				attempts = 0;
+				changesMade = true;
 			}
 
 			if (successfulChanges == 400) {
@@ -66,15 +59,13 @@ void simulatedAnnealing(double T, double min, double r) {
 				maxT *= rate;
 			}
 
-			// 4000 attempts without change
-			if (attempts == 4000) break;
+			if (i == 3999 && changesMade) {
+				cout << "4000 iterations made, lowering the temp... (" << (maxT * rate) << ")" << endl;
+				break;
+			}
 		}
 
-		// Complete pass.
-		if (attempts == 4000) {
-			cout << "Complete pass. Exiting." << endl;
-			break;
-		}
+		if (!changesMade) break;
 
 		maxT *= rate;
 	}
@@ -86,7 +77,7 @@ int main() {
 	int trialCount = trials;
 	while (trialCount != 0) {
 		// T value, T min, T decrease rate
-		simulatedAnnealing(1.0, 0.01, 0.9);
+		simulatedAnnealing(1.0, 0.01, 0.85);
 		trialCount--;
 		cout << endl;
 	}
