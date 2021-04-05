@@ -6,7 +6,7 @@
 #include "State.h"
 using namespace std;
 
-// e ^ -[ (change in score) / T ]
+// e ^ [ -(change in score) / T ]
 double accProb(int oldScore, int newScore, double T) { 
 	double exponent = (-(oldScore - newScore) / T);
 	return exp(exponent);
