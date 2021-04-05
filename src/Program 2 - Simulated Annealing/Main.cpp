@@ -20,7 +20,6 @@ void simulatedAnnealing(double T, double min, double r) {
 	double maxT = T;
 	double minT = min;
 	double rate = r;
-	int attempts = 0;
 	int successfulChanges = 0;
 	int localBest = 0;
 
